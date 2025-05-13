@@ -23,6 +23,8 @@ urlpatterns = [
     path('registration/',UserRegistrationView.as_view(),name = "register_users"),
     path("login/",login,name="login"),
     path('logout/',logout,name="logout"),
+    path('users/', CustomUserListView.as_view(), name='user-list'),
+    
     path('filter_issues',filter_issues,name="filter_issues"),
     path('verify-email/',VerifyEmailView.as_view(),name="email-verification"),
     path('resend-verification-code/',resend_verification_code,name='student-resend-code'),

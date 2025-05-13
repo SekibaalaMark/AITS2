@@ -48,6 +48,17 @@ from rest_framework.permissions import IsAuthenticated
 from .models import CustomUser
 from .serializers import RegistrarSerializer
 
+
+
+# users/views.py
+
+from rest_framework import generics
+
+class CustomUserListView(generics.ListAPIView):
+    queryset = CustomUser.objects.all()
+    serializer_class = CustomUserSerializer
+
+
 class RegistrarListView(APIView):
     """
     API endpoint to get all registrars
