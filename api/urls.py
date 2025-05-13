@@ -19,13 +19,13 @@ router.register(r'raise-issue',StudentRaiseIssueView,basename='student-raise-iss
 
 urlpatterns = [
     path('',include(router.urls)),
-    path('api/registrars/', RegistrarListView.as_view(), name='registrar-list'),
+    path('registrars/', RegistrarListView.as_view(), name='registrar-list'),
     path('registration/',UserRegistrationView.as_view(),name = "register_users"),
     path("login/",login,name="login"),
     path('logout/',logout,name="logout"),
     path('users/', CustomUserListView.as_view(), name='user-list'),
-    
-    path('filter_issues',filter_issues,name="filter_issues"),
+
+    path('filter_issues/',filter_issues,name="filter_issues"),
     path('verify-email/',VerifyEmailView.as_view(),name="email-verification"),
     path('resend-verification-code/',resend_verification_code,name='student-resend-code'),
     path('password-reset/request/', request_password_reset, name='request-password-reset'),
@@ -42,7 +42,7 @@ urlpatterns = [
     path('lecturer-dashboard/',LecturerDashboardCountView.as_view(),name='lecturer-dashboard'),
 
     path("token/",TokenObtainPairView.as_view(),name="get_token"),
-    path('token/refresh',TokenRefreshView.as_view(),name="refresh_token"),
+    path('token/refresh/',TokenRefreshView.as_view(),name="refresh_token"),
     path("auth/",include("rest_framework.urls")),
 ]
 
