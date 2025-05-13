@@ -10,6 +10,15 @@ REGISTRA_IDS =[20,30,40,50,60,90,80,90,21,23,24,25,26,27,28,29,31,32,34,35,36,37
 LECTURE_IDS =[11,22,33,44,55,66,77,88,99,110,220,330,440,550,660,770,880,990]
 
 
+from rest_framework import serializers
+from .models import CustomUser
+
+class RegistrarSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CustomUser
+        fields = ['id', 'username', 'email', 'first_name', 'last_name']
+
+
 class DepartmentSerializer(ModelSerializer):
     class Meta:
         model = Department

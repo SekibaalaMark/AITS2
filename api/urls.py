@@ -19,6 +19,7 @@ router.register(r'raise-issue',StudentRaiseIssueView,basename='student-raise-iss
 
 urlpatterns = [
     path('',include(router.urls)),
+    path('api/registrars/', RegistrarListView.as_view(), name='registrar-list'),
     path('registration/',UserRegistrationView.as_view(),name = "register_users"),
     path("login/",login,name="login"),
     path('logout/',logout,name="logout"),
