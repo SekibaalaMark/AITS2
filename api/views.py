@@ -690,6 +690,18 @@ class StudentDashboardCountView(APIView):
         })
 
 
+class UserProfileView(APIView):
+    permission_classes=[IsAuthenticated]
+    def get(self,request):
+        user = request.user 
+        return Response({'username':user.username,
+                         'email':user.email,
+                         'role':user.role,
+                         'staff_id_or_student_no':user.staff_id_or_student_no})
+
+
+
+
 
 
 class StudentProfileView(APIView):

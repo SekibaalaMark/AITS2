@@ -35,6 +35,7 @@ urlpatterns = [
     path('student/issues/summary/',StudentDashboardCountView.as_view(),name="student-issues-dashboard"),
     path('lecturer/issues/summary/',LecturerDashboardCountView.as_view(),name="student-issues-dashboard"),
     path('student-profile/',StudentProfileView.as_view(),name='student-profle'),
+    path('user/profile/',UserProfileView.as_view(),name='user-profle'),
     path('lecturer-profile/',LecturerProfileView.as_view(),name='lecturer-profle'),
     path('registrar-profile/',LecturerProfileView.as_view(),name='registrar-profle'),
     path('registrar-dashboard/',RegistrarDashboardCountView.as_view(),name='registrar-dashboard'),
